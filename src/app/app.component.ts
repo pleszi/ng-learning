@@ -69,5 +69,10 @@ export class AppComponent {
     return Math.max(...this.numbers);
   }
 
+  getAverageOfItems(paramArray: Array<number>) {
+
+    return paramArray.reduce((a, b) => a + b, 0);
+
+  }
 
 }
