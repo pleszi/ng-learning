@@ -1,6 +1,5 @@
 {
   "heroes": [
-
     {
       "id": 4,
       "name": "Ettore Thorne",
@@ -10,7 +9,7 @@
     {
       "id": 5,
       "name": "Cate Corck",
-      "address": "068 Sloan Drive",
+      "address": "068 Sloan Drive3",
       "superpower": "Cookley"
     },
     {
@@ -90,6 +89,39 @@
       "name": "Jack",
       "address": "Budapest",
       "superpower": "hungry"
+    },
+    {
+      "id": 601
+    },
+    {
+      "id": 602
+    },
+    {
+      "name": "James",
+      "address": "London Private Drive 10",
+      "id": 603
+    },
+    {
+      "name": "Micimackó",
+      "address": "100 holdas pagony",
+      "id": 604
+    },
+    {
+      "name": "Malacka",
+      "address": "Tilos az a 10",
+      "id": 605
+    },
+    {
+      "name": "Nyuszi",
+      "address": "a repa mellett",
+      "superpower": "",
+      "id": 606
+    },
+    {
+      "name": "James",
+      "address": "London Private Drive 10",
+      "superpower": "Cardify",
+      "id": 607
     }
   ]
 }

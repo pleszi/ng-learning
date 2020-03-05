@@ -1,18 +1,66 @@
-<ul>
-  <li>
+<div class="row">
+  <div class="col-6 offset-3">
+    <form
+      (ngSubmit)="onSubmit()"
+      #heroForm="ngForm"
+      *ngIf="hero"
+    >
+      <div class="form-group">
+        <label for="heroName">Name</label>
+        <input
+          id="heroName"
+          name="name"
+          [(ngModel)]="hero.name"
+          type="text"
+          class="form-control"
+          required
+          #heroName="ngModel"
+        >
+        <div
+          class="error-feedback"
+          [hidden]="heroName.valid || heroName.pristine"
+        >Please give a name</div>
+      </div>
+      <div class="form-group">
+        <label for="heroAddress">Address</label>
+        <input
+          id="heroAddress"
+          name="Address"
+          [(ngModel)]="hero.address"
+          type="text"
+          class="form-control"
+          required
+          pattern="[a-zA-Z0-9-\. ]{10,}"
+          #heroAddress="ngModel"
+        >
+        <div
+          class="error-feedback"
+          [hidden]="heroAddress.valid || heroAddress.pristine"
+        >Valid address must be 10 characters</div>
+      </div>
+      <div class="form-group">
+        <label for="heroPower">Super Power</label>
+        <select
+          id="heroPower"
+          name="superpower"
+          [(ngModel)]="hero.superpower"
+          class="form-control"
+          required
+        >
+          <option
+            *ngFor="let power of superPowers"
+            [value]="power"
+          >{{power}}</option>
+        </select></div>
 
-    <p>{{hero.name | prefix:'Herr'  }}</p>
-  </li>
-  <li>
-    <p>{{hero.address}}</p>
-  </li>
-  <li>
-    <p>{{hero.superpower}}</p>
-  </li>
-</ul>
-
-<!-- <ul>
-  <li *ngFor="let hero of heroes">
-    {{hero}}
-  </li>
-</ul> -->
+      <button
+        [disabled]="!heroForm.form.valid"
+        class="btn btn-success"
+        type="submit"
+      >Update</button>
+    </form>
+    <pre>
+      {{hero | json}}
+    </pre>
+  </div>
+</div>

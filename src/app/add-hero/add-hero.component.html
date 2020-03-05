@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col-8 offset-2">
+    <h2>Add new hero</h2>
+    <form
+      (ngSubmit)="onSubmit()"
+      [formGroup]="newHeroGroup"
+    >
+      <div class="form-group">
+        <label for="">Name</label>
+        <input
+          class="form-control"
+          type="text"
+          name="name"
+          id="heroName"
+          formControlName="name"
+        >
+        <div [hidden]="newHeroGroup.controls.name.pristine || newHeroGroup.controls.name.valid">
+          Name is required and min. length is 5 chars.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="">Address</label>
+        <input
+          class="form-control"
+          type="text"
+          name="address"
+          id="heroAddress"
+          formControlName="address"
+        >
+        <div
+          [hidden]="newHeroGroup.controls.address.pristine || newHeroGroup.controls.address.valid"
+        >
+          Address is required and min. length is 10 chars.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="">Super power</label>
+        <select
+          class="form-control"
+          name="power"
+          id="heroPower"
+          formControlName="superpower"
+        >
+          <option
+            *ngFor="let power of powers"
+            [value]="power"
+          >{{power}}</option>
+        </select>
+      </div>
+
+      <button
+        [disabled]="newHeroGroup.status == 'INVALID'"
+        class="btn btn-primary"
+        type="submit"
+      >Create</button>
+
+    </form>
+  </div>
+</div>

@@ -1,16 +1,15 @@
-import { Observable } from 'rxjs';
-import { Hero } from './../model/hero';
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Observable } from "rxjs";
+import { Hero } from "./../model/hero";
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class HeroService {
-
   jsonUrl: string = "http://localhost:3000/heroes";
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getAll(): Observable<Hero[]> {
     return this.http.get<Hero[]>(this.jsonUrl);
@@ -32,5 +31,4 @@ export class HeroService {
   update(hero: any): Observable<any> {
     return this.http.put(`${this.jsonUrl}/${hero.id}`, hero);
   }
-
 }

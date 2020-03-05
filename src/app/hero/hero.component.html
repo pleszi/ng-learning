@@ -1,5 +1,28 @@
 <div class="row">
   <div class="col-8 offset-2">
+    <a
+      routerLink="/hero/add"
+      class="btn btn-block btn-success"
+    >Add hero</a>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-8 offset-2">
+    <input
+      class="form-control"
+      #search
+      type="text"
+      (keyup)="0"
+    >
+    <p>{{search.value}}</p>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-8 offset-2">
     <table class="table table-striped">
       <thead>
         <tr>

@@ -10,6 +10,17 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HeroDetailComponent implements OnInit {
   hero: Hero;
+  superPowers: Array<string> = [
+    "Fixflex",
+    "Home Ing",
+    "Cookley",
+    "Cardify",
+    "Cardguard",
+    "really smart",
+    "rich",
+    "hard",
+    "Stronghold"
+  ];
 
   constructor(private ar: ActivatedRoute,
     private hService: HeroService) {
@@ -25,4 +36,10 @@ export class HeroDetailComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSubmit(): void {
+    this.hService.update(this.hero).forEach(value => {
+      console.log("Update hero: ", value);
+    });
+
+  }
 }

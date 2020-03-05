@@ -10,3 +10,17 @@ export const HEROES = [
     { name: 'Magneta' },
     { name: 'Bombasto' }
 ];
+
+export class Superpowers {
+    list: string[] = [
+        "Home Ing",
+        "Cookley",
+        "Cardify",
+        "Cardguard",
+        "really smart",
+        "rich",
+        "hard",
+        "Stronghold"
+    ]
+};
+
